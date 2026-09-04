@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Bilano Content Studio"
+description = "A premium internal content dashboard for ideating carousel stories, organizing reference content, and tracking post performance with an AI learning loop."
+version = "1.0.0"
+id = "artifacts/bilano-content-studio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21167
+
+[services.development]
+run = "pnpm --filter @workspace/bilano-content-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bilano-content-studio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bilano-content-studio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21167"
+BASE_PATH = "/"

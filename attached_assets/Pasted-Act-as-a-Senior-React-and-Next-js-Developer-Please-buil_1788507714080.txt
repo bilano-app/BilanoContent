@@ -1,0 +1,37 @@
+Act as a Senior React and Next.js Developer. Please build a modern, clean, and responsive internal dashboard UI for "Bilano Content Studio" using React, TypeScript (.tsx), Tailwind CSS, and Lucide Icons. The primary color theme should be financial green/teal.
+
+Do not integrate any real backend APIs yet. Use React state (useState) and dummy data so the UI is fully interactive and visually complete.
+
+### Layout Structure
+Create a persistent Sidebar for navigation and a main content area. The sidebar should have three menu items:
+1. Content Generator
+2. Reference Library
+3. Analytics & Learning
+
+### View 1: Content Generator (Generative Flow)
+This view handles the storytelling pipeline.
+- Section 1: "Ideation". A large textarea for the user to input the topic/idea, and a "Generate Script" button.
+- Section 2: "Script & Storyboard". A CSS Grid displaying 6 cards (representing carousel slides). Each card must have: Slide Number, an editable text area for "Dialogue", and an editable text area for "Image Prompt". Add a "Generate Visuals" button below this section.
+- Section 3: "Final Output". A preview area showing the 6 slides with dummy cartoon images and the dialogue overlaid. Include a prominent "Download All as .zip" button.
+
+### View 2: Reference Library (FYP Swipe File)
+This view stores engaging references to train the AI's standard of good content.
+- Top: A drag-and-drop upload zone for images.
+- Bottom: A Masonry or Grid gallery of uploaded references. Each image card should have:
+  - The image itself.
+  - A small input field for "Why is this engaging?" (e.g., "Good hook", "Relatable humor").
+  - A button to "Export Library to PDF".
+
+### View 3: Analytics & Learning (Feedback Loop)
+This view lists all generated outputs and tracks their performance so the AI can learn what works.
+- Top Section: "AI Insights Card". A card that displays a dummy summary, e.g., "AI Insight: Posts with relatable humor in the first slide get 40% more views."
+- Bottom Section: A data table of all generated content.
+  - Columns: Thumbnail, Content Title, Status (Dropdown: Draft, Uploaded), Upload Date.
+  - Metrics Columns: Views, Likes, Comments, Shares (these should be editable number input fields so the user can update them a week later).
+  - Action Column: "Save Analytics" button.
+
+### General Requirements
+- Ensure smooth transitions and hover states.
+- Break down the code into reusable small components where possible.
+- Use visually appealing empty states if no data is present yet.
+- Make it look like a premium SaaS dashboard.
