@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "node -e \"process.exit(0)\"",
-    "build": "pnpm --filter @workspace/bilano-content-studio run build && node -e \"const fs=require('fs'); fs.cpSync('artifacts/bilano-content-studio/dist', 'dist', {recursive: true});\"",
+    "build": "node build-vercel.cjs",
     "build:all": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
