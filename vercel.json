@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "buildCommand": "pnpm --filter @workspace/bilano-content-studio run build",
-  "outputDirectory": "artifacts/bilano-content-studio/dist",
+  "buildCommand": "pnpm --filter @workspace/bilano-content-studio run build && node -e \"const fs=require('fs'); fs.cpSync('artifacts/bilano-content-studio/dist', 'dist', {recursive: true});\"",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
