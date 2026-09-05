@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
   "buildCommand": "pnpm --filter @workspace/bilano-content-studio run build",
-  "outputDirectory": "artifacts/bilano-content-studio/dist"
+  "outputDirectory": "artifacts/bilano-content-studio/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
